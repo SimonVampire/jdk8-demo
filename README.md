@@ -1,4 +1,4 @@
-# JDK8新特性 研究学习使用
+# JDK8新特性 研究学习使用---持续更新中
 
 Java 8 是目前最常用的 JDK 版本，在增强代码可读性、简化代码方面，做了很多优化，
 如 Lambda、Stream 、ParallelStream、Optional、新日期时间类型等。
