@@ -1,4 +1,4 @@
-package com.example.jdk8demo.functionalprogramming;
+package com.example.jdk8.demo.functionalprogramming;
 
 import lombok.extern.slf4j.Slf4j;
 

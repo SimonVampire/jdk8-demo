@@ -39,3 +39,25 @@ https://blog.csdn.net/zx03070723/article/details/115735117
 | 实例方法引入  | Instance::methodName  | (args)->对象实例.method(args)    |
 | 构造函数yinru | Class::new            | (args)->new 类名(args)           |
 
+## Steam 流
+
+通过将集合（如List 、Set、Map等）转换为一种叫做流的元素队列，通过声明性方式，能够对集合中的每个元素进行一系列并行或串行的流水线操作。
+
+按照功能可以划分八大类型    
+
+### 筛选
+
+| 方法     | 语法                                             | 描述                                |
+| -------- | ------------------------------------------------ | ----------------------------------- |
+| filter   | Stream<T> filter(Predicate<? super T> predicate) | 通过条件过滤元素                    |
+| distinct | Stream<T> distinct()                             | 去重                                |
+| limit    | Stream<T> limit(long maxSize)                    | 截取流，自取maxSize条数据           |
+| skip     | Stream<T> skip(long n)                           | 跳过操作，跳过n条数据，取后面的数据 |
+
+### 转换  
+
+| 方法    | 语法                                                         | 描述                                         |
+| ------- | ------------------------------------------------------------ | -------------------------------------------- |
+| map     | Stream map(Function<? super T, ? extends R> mapper)          | 转化操作，将流中每一个元素T转化为R           |
+| flatMap | Stream  flatMap(Function<? super T, ? extends Stream<? extends R>> mapper) | 转化操作，将参数T 转化为R，返回多个R类型的流 |
+

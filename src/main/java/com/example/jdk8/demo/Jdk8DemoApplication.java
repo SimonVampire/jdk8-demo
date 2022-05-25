@@ -1,4 +1,4 @@
-package com.example.jdk8demo;
+package com.example.jdk8.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

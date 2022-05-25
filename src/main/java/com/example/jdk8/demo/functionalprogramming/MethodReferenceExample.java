@@ -1,5 +1,6 @@
-package com.example.jdk8demo.functionalprogramming;
+package com.example.jdk8.demo.functionalprogramming;
 
+import com.example.jdk8.demo.pojo.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -44,11 +45,4 @@ public class MethodReferenceExample {
     }
 
 
-    @Data
-    @NoArgsConstructor
-    @AllArgsConstructor
-    static class User {
-        String name;
-        Integer age;
-    }
 }

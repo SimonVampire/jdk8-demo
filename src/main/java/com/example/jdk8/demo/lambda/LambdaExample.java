@@ -1,4 +1,4 @@
-package com.example.jdk8demo.lambda;
+package com.example.jdk8.demo.lambda;
 
 /**
  * @description Lambda表达式 样例
@@ -16,6 +16,6 @@ public class LambdaExample {
         }).start();
 
         //转换为Lambda表达式，代码更加简洁、易读
-        new Thread(() -> System.out.println("hello1")).start();
+        new Thread(() -> System.out.println("hello2")).start();
     }
 }
