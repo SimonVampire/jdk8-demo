@@ -1,13 +1,8 @@
 package com.example.jdk8.demo.find;
 
-import com.example.jdk8.demo.match.MatchStreamExample;
 import com.example.jdk8.demo.pojo.User;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;

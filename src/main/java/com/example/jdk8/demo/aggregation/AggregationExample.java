@@ -29,12 +29,18 @@ public class AggregationExample {
         //reduce 计算返回唯一值
         // 1. Optional<T> reduce(BinaryOperator<T> accumulator)  如下面那就是一个累加器
         log.info("1.年龄的和：{}",list.stream().reduce((a,b)->a+b).get());
-        // 2. T reduce(T identity,BinaryOperator<T> accumulator) 比上面多了一个初始值
-        log.info("2.年龄的和：{}",list.stream().reduce(10,(a,b)->a+b));
+        // 2.1 T reduce(T identity,BinaryOperator<T> accumulator) 比上面多了一个初始值，相当于10+各年龄
+        log.info("2.1 年龄的和：{}",list.stream().reduce(10,(a,b)->a+b));
+        // 2.2  并行流相当于 （10+年龄1）+（）
+        log.info("2.2 年龄的和：{}",list.parallelStream().reduce(10,(a,b)->a+b));
         //3. <U> U reduce(U identity,
         //             BiFunction<U,? super T,U> accumulator,
         //             BinaryOperator<U> combiner)
-        // 加了第3个参数，主要作用是处理并发操作，合并每个线程的result
-        log.info("3.年龄的和：{}",list.stream().reduce(10,(a,b)->a+b, (a,b)-> 0));
+        // 加了第3个参数，主要作用是处理并发操作，合并每个线程的result,串行流第三个参数不起作用，和双参数一样。
+        log.info("3.1 年龄的和：{}",list.stream().reduce(10,(a,b)->a+b, (a,b)-> 0));
+        //并行流的时候起作用，比如这里把它置为0
+        log.info("3.2 年龄的和：{}",list.parallelStream().reduce(10,(a,b)->a+b, (a,b)-> 0));
+        //并行流的时候起作用，比如这里规则一致，获取结果
+        log.info("3.3 年龄的和：{}",list.parallelStream().reduce(10,(a,b)->a+b, (a,b)-> a+b));
     }
 }
