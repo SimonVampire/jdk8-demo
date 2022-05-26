@@ -1,4 +1,4 @@
-package com.example.jdk8.demo.stream;
+package com.example.jdk8.demo.stream.transform;
 
 import com.example.jdk8.demo.pojo.User;
 import lombok.AllArgsConstructor;

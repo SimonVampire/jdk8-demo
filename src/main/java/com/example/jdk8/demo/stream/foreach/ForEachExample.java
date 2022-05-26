@@ -1,4 +1,4 @@
-package com.example.jdk8.demo.foreach;
+package com.example.jdk8.demo.stream.foreach;
 
 import com.example.jdk8.demo.pojo.User;
 import lombok.extern.slf4j.Slf4j;

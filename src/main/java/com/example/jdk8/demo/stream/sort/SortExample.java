@@ -1,9 +1,8 @@
-package com.example.jdk8.demo.sort;
+package com.example.jdk8.demo.stream.sort;
 
 import com.example.jdk8.demo.pojo.User;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.jdk8.demo.maxormin;
+package com.example.jdk8.demo.stream.maxormin;
 
 import com.example.jdk8.demo.pojo.User;
 import lombok.extern.slf4j.Slf4j;

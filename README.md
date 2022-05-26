@@ -39,7 +39,7 @@ https://blog.csdn.net/zx03070723/article/details/115735117
 | 实例方法引入  | Instance::methodName  | (args)->对象实例.method(args)    |
 | 构造函数yinru | Class::new            | (args)->new 类名(args)           |
 
-## Steam 流
+## Steam/ParallelStream  串/并行流
 
 通过将集合（如List 、Set、Map等）转换为一种叫做流的元素队列，通过声明性方式，能够对集合中的每个元素进行一系列并行或串行的流水线操作。
 
@@ -60,4 +60,48 @@ https://blog.csdn.net/zx03070723/article/details/115735117
 | ------- | ------------------------------------------------------------ | -------------------------------------------- |
 | map     | Stream map(Function<? super T, ? extends R> mapper)          | 转化操作，将流中每一个元素T转化为R           |
 | flatMap | Stream  flatMap(Function<? super T, ? extends Stream<? extends R>> mapper) | 转化操作，将参数T 转化为R，返回多个R类型的流 |
+
+### 匹配
+
+| 方法      | 语法                                              | 描述                                         |
+| --------- | ------------------------------------------------- | -------------------------------------------- |
+| allMatch  | boolean allMatch(Predicate<? super T> predicate)  | 转化操作，将参数T 转化为R，返回多个R类型的流 |
+| anyMatch  | boolean anyMatch(Predicate<? super T> predicate)  | 判断是否有一条匹配                           |
+| noneMatch | boolean noneMatch(Predicate<? super T> predicate) | 判断是否都不匹配                             |
+
+### 查找
+
+| 方法      | 语法                    | 描述                                     |
+| --------- | ----------------------- | ---------------------------------------- |
+| findAny   | Optional<T> findAny()   | 查找操作，查询流中任意元素并返回Optional |
+| findFirst | Optional<T> findFirst() | 查找操作，查询流中的第一个元素           |
+
+### 最大/小值
+
+| 方法 | 语法                                              | 描述                         |
+| ---- | ------------------------------------------------- | ---------------------------- |
+| min  | Optional<T> min(Comparator<? super T> comparator) | 求最小值，根据Comparator计算 |
+| max  | Optional<T> max(Comparator<? super T> comparator) | 求最大值，根据Comparator计算 |
+
+### 聚合
+
+| 方法    | 语法                                                   | 描述                              |
+| ------- | ------------------------------------------------------ | --------------------------------- |
+| collect | <R, A> R collect(Collector<? super T, A, R> collector) | 汇总操作                          |
+| count   | long count()                                           | 数量统计                          |
+| reduce  | Optional<T> reduce(BinaryOperator<T> accumulator)      | 通过计算返回唯一值                |
+| reduce  | T reduce(T identity, BinaryOperator<T> accumulator)    | 提供初始值T，再通过计算返回唯一值 |
+
+### 遍历
+
+| 方法    | 语法                                     | 描述                                                  |
+| ------- | ---------------------------------------- | ----------------------------------------------------- |
+| foreach | void forEach(Consumer<? super T> action) | 不能使用break、return、continue等关键字结束或跳出循环 |
+
+### 排序
+
+| 方法 | 语法                                               | 描述                       |
+| ---- | -------------------------------------------------- | -------------------------- |
+| sort | Stream<T> sorted()                                 | T 实现Comparable           |
+| sort | Stream<T> sorted(Comparator<? super T> comparator) | 按照自己的比较函数进行排序 |
 

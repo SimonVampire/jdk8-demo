@@ -1,4 +1,4 @@
-package com.example.jdk8.demo.match;
+package com.example.jdk8.demo.stream.match;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

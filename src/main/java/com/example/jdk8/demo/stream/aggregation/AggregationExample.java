@@ -1,4 +1,4 @@
-package com.example.jdk8.demo.aggregation;
+package com.example.jdk8.demo.stream.aggregation;
 
 import com.example.jdk8.demo.pojo.User;
 import lombok.extern.slf4j.Slf4j;
