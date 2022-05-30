@@ -105,3 +105,42 @@ https://blog.csdn.net/zx03070723/article/details/115735117
 | sort | Stream<T> sorted()                                 | T 实现Comparable           |
 | sort | Stream<T> sorted(Comparator<? super T> comparator) | 按照自己的比较函数进行排序 |
 
+## Optional 容器对象
+
+| 方法                                                 | 描述                                                         |
+| ---------------------------------------------------- | ------------------------------------------------------------ |
+| empty()                                              | 返回一个空的 Optional实例                                    |
+| equals(Object obj)                                   | 指示某个其他对象是否等于此可选项                             |
+| filter(Predicate<? super T> predicate)               | 如果一个值存在，并且该值给定的谓词相匹配时，返回一个 Optional描述的值，否则返回一个空的 Optional 。 |
+| flatMap(Function<? super T,Optional<U>> mapper)      | 如果一个值存在，应用提供的 Optional映射函数给它，返回该结果，否则返回一个空的 Optional 。 |
+| map(Function<? super T,? extends U> mapper)          | 如果存在一个值，则应用提供的映射函数，如果结果不为空，则返回一个 Optional结果的 Optional |
+| get()                                                | 返回包含值                                                   |
+| ifPresent(Consumer<? super T> consumer)              | 如果存在值，则使用该值调用指定的消费者，否则不执行任何操作。 |
+| isPresent()                                          | 如果存在值返回 true，否则为 false 。                         |
+| of(T value)                                          | 返回具有 Optional的当前非空值的Optional。                    |
+| ofNullable(T value)                                  | 返回一个 Optional指定值的Optional，如果空，则返回一个空的 Optional |
+| orElse(T other)                                      | 返回值如果存在，否则返回 other 。                            |
+| orElseGet(Supplier<? extends T> other)               | 返回值（如果存在），否则调用 other并返回该调用的结果         |
+| orElseThrow(Supplier<? extends X> exceptionSupplier) | 返回包含的值（如果存在），否则抛出由提供的供应商创建的异常   |
+
+## 收集器工具类Collectors
+
+| 功能             | 语法                                                         |
+| ---------------- | ------------------------------------------------------------ |
+| 拼接             | Collector<CharSequence, ?, String> joining()                 |
+|                  | Collector<CharSequence, ?, String> joining(CharSequence delimiter) |
+|                  | Collector<CharSequence, ?, String> joining(CharSequence delimiter,  CharSequence prefix,CharSequence suffix) |
+| 断言分组         | Collector<T,?,Map<Boolean,List<T>>> partitioningBy(Predicate<? super T> predicate) |
+|                  | Collector<T, ?, Map<Boolean, D>> partitioningBy(Predicate<? super T> predicate, Collector<? super T,A,D> downstream) |
+| 分组             | groupingBy(Function)                                         |
+|                  | groupingBy(Function, Supplier, Collector)                    |
+|                  | groupingByConcurrent(Function) 并发                          |
+|                  | groupingByConcurrent(Function, Collector) 并发               |
+|                  | groupingByConcurrent(Function, Supplier, Collector)并发      |
+| 统计数量         | <T> Collector<T, ?, Long>   counting()                       |
+| 统计信息         | summarizingLong(ToLongFunction）                             |
+|                  | summarizingDouble(ToDoubleFunction)                          |
+|                  | summarizingInt(ToIntFunction)                                |
+| 直接获取统计信息 | averagingDouble                                              |
+|                  | summingDouble                                                |
+
