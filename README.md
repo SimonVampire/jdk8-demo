@@ -144,3 +144,58 @@ https://blog.csdn.net/zx03070723/article/details/115735117
 | 直接获取统计信息 | averagingDouble                                              |
 |                  | summingDouble                                                |
 
+## 日期
+
+### LocalDate 不含具体时间的日期
+
+| 方法                               | 描述                                               |
+| ---------------------------------- | -------------------------------------------------- |
+| getYear()                          | 获取年份 返回int                                   |
+| getMonth()                         | 获取当前日期的月份对象，返回Month                  |
+| getMonthValue()                    | 获取当前日期是第几月，返回int                      |
+| getDayOfWeek()                     | 表示星期几 返回 DayOfWeek                          |
+| getDayOfMonth()                    | 表示这个月的第几天 返回 int                        |
+| getDayOfYear()                     | 表示年份的第几天 返回int                           |
+| withYear(int year)                 | 修改当前对象的年份返回LocalDate                    |
+| withMonth(int month)               | 修改当前对象的月份。返回LocalDate                  |
+| withDayOfMonth(int dayOfMonth)     | 修改对象的月份的日期                               |
+| plusYears(long yearsToAdd)         | 增加指定年数 返回LocalDate，注意返回值赋给原对象   |
+| plusMonths(long monthsToAdd)       | 增加指定月数                                       |
+| plusWeeks(long weeksToAdd)         | 增加指定周数                                       |
+| plusDays(long daysToAdd)           | 增加天数                                           |
+| minusYears(long yearsToSubtract)   | 减少年数                                           |
+| minusMonths(long monthsToSubtract) | 减少月数                                           |
+| minusWeeks(long weeksToSubtract)   | 减少星期数                                         |
+| minusDays(long daysToSubtract)     | 减少天数                                           |
+| compareTo(ChronoLocalDate other)   | 比较日期，当前对象比other晚，则返回正数 int        |
+| isBefore(ChronoLocalDate other)    | 判断对象日期是否在other之前                        |
+| isAfter(ChronoLocalDate other)     | 判断对象日期是否在other之后                        |
+| isEqual(ChronoLocalDate other)     | 判断对象日期是否相等                               |
+| atStartOfDay()；                   | 返回当前localDate对象的凌晨时刻的LocalDateTime对象 |
+| format(DateTimeFormatter）         | 此时使用指定的格式化程序格式化。                   |
+
+### LocalTime 不含日期的时间
+
+方法和LocalDate 类似
+
+### LocalDateTime 包含了日期及时间
+
+方法和LocalDate 类似
+
+### DateTimeFormatter 日期格式化
+
+| 方法                      | 描述         |
+| ------------------------- | ------------ |
+| ofPattern(String pattern) | 使用指定格式 |
+
+### Duration 时间差
+
+| 方法                                          | 描述               |
+| --------------------------------------------- | ------------------ |
+| Duration.between(LocalDateTime,LocalDateTime) | 时间差             |
+| toDays()                                      | 两个时间差的天数   |
+| toHours()                                     | 两个时间差的小时数 |
+| toMinutes()                                   | 两个时间差的分钟数 |
+| toMillis()                                    | 两个时间差的毫秒数 |
+| toNanos()                                     | 两个时间差的纳秒数 |
+
