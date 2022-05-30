@@ -22,13 +22,13 @@ public class FiltrateStreamExample {
     public static final String SIMON_KEY="Simon";
     
     private static List<User> list =Arrays.asList(
-            new User(1,SIMON_KEY,18),
+            new User(SIMON_KEY,18),
             //增加一套重复的，用来测试去重
-            new User(1,SIMON_KEY,18),
-            new User(2,"Hank",30),
-            new User(3,"Jay",15),
-            new User(4,"Eric",28),
-            new User(5,SIMON_KEY,40)
+            new User(SIMON_KEY,18),
+            new User("Hank",30),
+            new User("Jay",15),
+            new User("Eric",28),
+            new User(SIMON_KEY,40)
     );
 
     public static void main(String[] args) {

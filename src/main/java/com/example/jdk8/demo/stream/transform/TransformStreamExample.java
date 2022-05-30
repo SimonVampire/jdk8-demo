@@ -37,13 +37,13 @@ public class TransformStreamExample {
      */
     public static void transform(){
         List<User> list =Arrays.asList(
-                new User(1,SIMON_KEY,18),
+                new User(SIMON_KEY,18),
                 //增加一套重复的，用来测试去重
-                new User(1,SIMON_KEY,18),
-                new User(2,"Hank",30),
-                new User(3,"Jay",15),
-                new User(4,"Eric",28),
-                new User(5,SIMON_KEY,40)
+                new User(SIMON_KEY,18),
+                new User("Hank",30),
+                new User("Jay",15),
+                new User("Eric",28),
+                new User(SIMON_KEY,40)
         );
         // map  转换获取所有去重的name
         Object[] mapArr = list.stream().map(User::getName).distinct().toArray(String[]::new);
